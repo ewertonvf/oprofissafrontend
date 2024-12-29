@@ -1,0 +1,224 @@
+.
+  |-%ProgramData%
+  |  |-Microsoft
+  |  |  |-Windows
+  |-.eslintrc.js
+  |-.expo
+  |  |-devices.json
+  |  |-README.md
+  |  |-web
+  |  |  |-cache
+  |-.git
+  |  |-config
+  |  |-description
+  |  |-HEAD
+  |  |-hooks
+  |  |  |-applypatch-msg.sample
+  |  |  |-commit-msg.sample
+  |  |  |-fsmonitor-watchman.sample
+  |  |  |-post-update.sample
+  |  |  |-pre-applypatch.sample
+  |  |  |-pre-commit.sample
+  |  |  |-pre-merge-commit.sample
+  |  |  |-pre-push.sample
+  |  |  |-pre-rebase.sample
+  |  |  |-pre-receive.sample
+  |  |  |-prepare-commit-msg.sample
+  |  |  |-push-to-checkout.sample
+  |  |  |-sendemail-validate.sample
+  |  |  |-update.sample
+  |  |-info
+  |  |  |-exclude
+  |  |-objects
+  |  |  |-info
+  |  |  |-pack
+  |  |-refs
+  |  |  |-heads
+  |  |  |-tags
+  |-.husky
+  |  |-pre-commit
+  |  |-_
+  |  |  |-.gitignore
+  |  |  |-applypatch-msg
+  |  |  |-commit-msg
+  |  |  |-h
+  |  |  |-husky.sh
+  |  |  |-post-applypatch
+  |  |  |-post-checkout
+  |  |  |-post-commit
+  |  |  |-post-merge
+  |  |  |-post-rewrite
+  |  |  |-pre-applypatch
+  |  |  |-pre-auto-gc
+  |  |  |-pre-commit
+  |  |  |-pre-merge-commit
+  |  |  |-pre-push
+  |  |  |-pre-rebase
+  |  |  |-prepare-commit-msg
+  |-app
+  |  |-index.tsx
+  |-app.json
+  |-assets
+  |  |-fonts
+  |  |  |-SpaceMono-Regular.ttf
+  |  |-images
+  |  |  |-adaptive-icon.png
+  |  |  |-favicon.png
+  |  |  |-icon.png
+  |  |  |-splash.png
+  |-babel.config.js
+  |-declarations.d.ts
+  |-node_modules
+  |-package-lock.json
+  |-package.json
+  |-src
+  |  |-App.tsx
+  |  |-components
+  |  |  |-Layout
+  |  |  |-List
+  |  |  |-search
+  |  |  |-Service
+  |  |  |-UI
+  |  |-config
+  |  |  |-theme.ts
+  |  |-context
+  |  |  |-ThemeContext.tsx
+  |  |-features
+  |  |  |-auth
+  |  |  |-favorites
+  |  |  |-profile
+  |  |  |-search
+  |  |  |-services
+  |  |-hooks
+  |  |  |-useAuth.ts
+  |  |  |-useColorScheme.ts
+  |  |  |-useServices.ts
+  |  |  |-useTransition.ts
+  |  |-navigation
+  |  |  |-AuthNavigator.tsx
+  |  |  |-RootNavigator.tsx
+  |  |  |-TabNavigator.tsx
+  |  |-services
+  |  |  |-api.ts
+  |  |-store.ts
+  |  |-types
+  |  |  |-authTypes.ts
+  |  |  |-favoriteTypes.ts
+  |  |  |-global.d.ts
+  |  |  |-index.ts
+  |  |  |-navigationTypes.ts
+  |  |  |-profileTypes.ts
+  |  |  |-searchTypes.ts
+  |  |  |-serviceTypes.ts
+  |  |  |-storeTypes.ts
+  |  |  |-uiTypes.ts
+  |  |-utils
+  |  |  |-index.ts
+  |  |  |-validation.ts
+  |-tsconfig.json
+  |-metro.config.js
+
+
+
+Pontos de Conexão:
+
+useServices.ts se conecta com o Redux store e o slice de serviços.
+useColorScheme.ts é um wrapper simples para a função nativa do React Native.
+useTransition.ts utiliza hooks do React para gerenciar transições.
+useTheme.ts e ThemeContext.tsx estão intimamente conectados, fornecendo acesso ao tema em toda a aplicação.
+Colors.ts importa o tema de theme.ts, criando uma ponte entre a configuração do tema e as cores usadas na aplicação.
+theme.ts define os temas light e dark, que são utilizados pelo ThemeContext.tsx.
+
+
+Entendo completamente suas preocupações e agradeço pela oportunidade de esclarecer e reconquistar sua confiança. Vamos recapitular o que discutimos e o que foi planejado para o seu projeto, além de abordar como podemos evitar erros no futuro.
+
+### Resumo do que Criamos e Planejamos
+
+1. **Objetivo do Projeto**: Desenvolver um marketplace de serviços com uma estrutura moderna e escalável, utilizando as melhores práticas de 2024.
+
+2. **Estrutura do Projeto**: 
+   - **Organização Modular**: Dividimos o projeto em pastas como `components`, `features`, `navigation`, `hooks`, `context`, `utils`, `constants`, `types`, `config`, e `services`.
+   - **Features**: Cada funcionalidade principal (como autenticação, perfil, serviços, busca, favoritos) foi organizada dentro da pasta `features`, agrupando lógica de estado, componentes e serviços relacionados.
+   - **Componentes Reutilizáveis**: Componentes de UI e layout foram organizados em subpastas dentro de `components` para promover a reutilização e consistência.
+
+3. **Motivo da Estrutura**:
+   - **Escalabilidade**: Facilitar a adição de novas funcionalidades sem desorganizar o projeto.
+   - **Manutenibilidade**: Simplificar a manutenção e atualização do código, permitindo que diferentes partes do projeto sejam trabalhadas de forma independente.
+   - **Clareza**: Melhorar a legibilidade e a organização do código, tornando-o mais acessível para novos desenvolvedores.
+
+### Erros e Como Evitá-los
+
+1. **Erros Ocorridos**:
+   - **Inconsistências na Estrutura**: Houve confusão na organização das pastas e arquivos, como a criação indevida de pastas ou arquivos que não existiam no seu projeto original.
+   - **Desatenção aos Detalhes**: Falta de atenção ao seguir a estrutura que você forneceu, resultando em sugestões incorretas.
+
+2. **Como Evitar Erros Futuros**:
+   - **Revisão Detalhada**: Antes de fornecer uma resposta, revisar cuidadosamente a estrutura e os detalhes do projeto que você compartilhou.
+   - **Confirmação de Informações**: Confirmar com você qualquer detalhe que não esteja claro ou que possa ter sido mal interpretado.
+   - **Documentação Clara**: Manter uma documentação clara e atualizada do projeto para referência, garantindo que todas as partes interessadas estejam alinhadas.
+
+3. **Como Lembrar e Evitar Esquecimentos**:
+   - **Anotações e Resumos**: Criar resumos e anotações das conversas anteriores para referência rápida.
+   - **Feedback Contínuo**: Solicitar feedback constante para garantir que as soluções propostas estejam alinhadas com suas expectativas e necessidades.
+
+Entendo a importância de criar um texto claro e abrangente que sirva como um guia de referência para manter o foco e a clareza no desenvolvimento do seu projeto. Este documento será um recurso para garantir que eu permaneça alinhado com suas expectativas e necessidades. Vamos criar um texto que resuma o que estamos fazendo, por que estamos fazendo, e como devemos proceder.
+
+---
+
+### Guia de Referência para o Desenvolvimento do Marketplace de Serviços
+
+
+
+#### Estrutura do Projeto
+
+1. **Organização Modular**:
+   - **Pasta `src`**: Contém todo o código-fonte do projeto, organizado em subpastas para componentes, funcionalidades, navegação, hooks, contexto, utilitários, constantes, tipos, configuração e serviços.
+   - **Pasta `assets`**: Armazena fontes e imagens utilizadas no projeto.
+
+2. **Subpastas em `src`**:
+   - **`components`**: Componentes de UI e layout, organizados em subpastas como `UI`, `Layout`, `Service`, `List`, e `Search`.
+   - **`features`**: Funcionalidades principais do aplicativo, como autenticação, perfil, serviços, busca e favoritos, cada uma com sua lógica de estado, componentes e serviços relacionados.
+   - **`navigation`**: Arquivos de navegação, incluindo `AuthNavigator`, `RootNavigator` e `TabNavigator`.
+   - **`hooks`**: Hooks personalizados para lógica compartilhada entre componentes.
+   - **`context`**: Contextos para gerenciar estados globais, como o tema.
+   - **`utils`**: Funções utilitárias e helpers.
+   - **`constants`**: Constantes globais, como cores.
+   - **`types`**: Tipos TypeScript para garantir a segurança do código.
+   - **`config`**: Configurações do projeto, como temas.
+   - **`services`**: Serviços de API e lógica de comunicação com o backend.
+
+3. **Arquivos de Configuração**:
+   - **`.eslintrc.js`, `babel.config.js`, `tsconfig.json`**: Configurações para linting, transpiração e compilação.
+   - **`app.json`, `package.json`**: Configurações do aplicativo e dependências.
+
+#### Motivo da Estrutura
+
+- **Escalabilidade**: Facilitar a adição de novas funcionalidades sem desorganizar o projeto.
+- **Manutenibilidade**: Simplificar a manutenção e atualização do código, permitindo que diferentes partes do projeto sejam trabalhadas de forma independente.
+- **Clareza**: Melhorar a legibilidade e a organização do código, tornando-o mais acessível para novos desenvolvedores.
+
+#### Processo de Desenvolvimento
+
+1. **Ordem de Implementação**:
+   - Começar com arquivos de configuração e estrutura básica.
+   - Implementar tipos e constantes.
+   - Desenvolver componentes básicos.
+   - Configurar a navegação.
+   - Implementar o estado global com Redux.
+   - Desenvolver serviços e lógica de API.
+   - Criar utilitários e helpers.
+   - Desenvolver telas do aplicativo.
+   - Integrar tudo no arquivo principal da aplicação.
+
+2. **Revisão e Feedback**:
+   - Manter uma comunicação aberta e contínua para ajustar a estrutura e funcionalidades conforme necessário.
+   - Solicitar feedback constante para garantir que as soluções propostas estejam alinhadas com suas expectativas e necessidades.
+
+#### Como Evitar Erros e Perda de Foco
+
+- **Revisão Detalhada**: Antes de fornecer uma resposta, revisar cuidadosamente a estrutura e os detalhes do projeto que você compartilhou.
+- **Confirmação de Informações**: Confirmar com você qualquer detalhe que não esteja claro ou que possa ter sido mal interpretado.
+- **Documentação Clara**: Manter uma documentação clara e atualizada do projeto para referência, garantindo que todas as partes interessadas estejam alinhadas.
+- **Anotações e Resumos**: Criar resumos e anotações das conversas anteriores para referência rápida.
+
+Este guia servirá como um lembrete constante do que estamos fazendo e como devemos proceder. Estou comprometido em melhorar e garantir que suas necessidades sejam atendidas com precisão. Se houver algo mais que você gostaria de discutir ou ajustar, por favor, me avise. Estou aqui para ajudar.
